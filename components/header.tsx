@@ -36,7 +36,7 @@ export function Header() {
 
         <div className="hidden md:block">
           <Button asChild>
-            <a href="#iletisim">Teklif Al</a>
+            <a href="tel:+905377322726">Hemen Ara</a>
           </Button>
         </div>
 
@@ -67,8 +67,8 @@ export function Header() {
               </a>
             ))}
             <Button asChild className="mt-2">
-              <a href="#iletisim" onClick={() => setMobileOpen(false)}>
-                Teklif Al
+              <a href="tel:+905377322726" onClick={() => setMobileOpen(false)}>
+                Hemen Ara
               </a>
             </Button>
           </nav>

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, PhoneCall, ShieldCheck, Star } from "lucide-react"
+import { ArrowRight, PhoneCall, ShieldCheck } from "lucide-react"
 
 export function Hero() {
   return (
@@ -18,7 +18,7 @@ export function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
               </span>
               <span className="text-xs font-semibold text-red-700">
-                {"İstanbul'da her 8 dakikada bir hırsızlık girişimi yaşanıyor"}
+                {"Antalya'da her saatte bir hırsızlık girişimi yaşanıyor"}
               </span>
             </div>
 
@@ -36,44 +36,18 @@ export function Hero() {
               güvenlik açıklarınızı tespit edelim, size özel çözüm sunalım.
             </p>
 
-            {/* Social Proof Micro */}
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {[1, 2, 3].map((i) => (
-                  <Image
-                    key={i}
-                    src={`/images/testimonial-${i}.jpg`}
-                    alt="Mutlu müşteri"
-                    width={36}
-                    height={36}
-                    className="h-9 w-9 rounded-full border-2 border-background object-cover"
-                  />
-                ))}
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <span className="text-xs text-muted-foreground">
-                  <strong className="text-foreground">500+</strong> mutlu müşteri
-                </span>
-              </div>
-            </div>
-
             {/* CTAs */}
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button size="lg" asChild className="gap-2 text-base shadow-md shadow-primary/20">
-                <a href="#iletisim">
-                  Ücretsiz Keşif Talep Et
-                  <ArrowRight className="h-4 w-4" />
+                <a href="tel:+905377322726">
+                  <PhoneCall className="h-4 w-4" />
+                  Hemen Ara
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild className="gap-2 text-base">
-                <a href="tel:+902125554242">
-                  <PhoneCall className="h-4 w-4" />
-                  Hemen Ara
+                <a href="https://wa.me/905377322726" target="_blank" rel="noopener noreferrer">
+                  <ArrowRight className="h-4 w-4" />
+                  WhatsApp&apos;tan Yaz
                 </a>
               </Button>
             </div>
@@ -126,11 +100,6 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating: Projects count */}
-            <div className="absolute -right-2 top-6 rounded-xl border border-border bg-background p-3 shadow-lg">
-              <p className="font-heading text-2xl font-bold text-foreground">500+</p>
-              <p className="text-[11px] text-muted-foreground">Başarılı Proje</p>
-            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: #0a0a0f;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 40px;
+}
+
+.logo-wrapper.dark  { background: #0a0a0f; }
+.logo-wrapper.light { background: #eef2ff; border-top: 1px solid rgba(0,0,0,0.07); }
+
+/* ===== LOGO ROW ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ===== SHIELD ICON ===== */
+.icon-wrap {
+  width: 96px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 14px rgba(0,180,255,0.45));
+  animation: glow 3s ease-in-out infinite;
+}
+
+.icon-wrap.light-icon {
+  filter: drop-shadow(0 0 10px rgba(0,68,204,0.35));
+  animation: glow-light 3s ease-in-out infinite;
+}
+
+.icon-wrap svg { width: 100%; height: auto; display: block; }
+
+@keyframes glow {
+  0%,100% { filter: drop-shadow(0 0 14px rgba(0,180,255,0.45)); }
+  50%      { filter: drop-shadow(0 0 26px rgba(0,180,255,0.75)); }
+}
+@keyframes glow-light {
+  0%,100% { filter: drop-shadow(0 0 10px rgba(0,68,204,0.35)); }
+  50%      { filter: drop-shadow(0 0 20px rgba(0,68,204,0.6));  }
+}
+
+/* ===================================================
+   TEXT BLOCK
+   Layout:
+     [ KAR ] [ TECH            ]
+             [ teknoloji&güven ]
+
+   KAR = full height (line-height: 1 → 90px)
+   TECH = 2/3 × 90 = 60px  (top of right col)
+   tagline = 1/3 × 90 = 30px (bottom of right col)
+   =================================================== */
+
+.text-block {
+  display: flex;
+  align-items: stretch;
+}
+
+/* --- Sol: KAR --- */
+.kar {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  font-size: 104px;
+  /* line-height: 1cap → box yüksekliği = büyük harf yüksekliği (cap height).
+     Böylece KAR kutusunun üstü = K'nın tepesi, altı = K'nın tabanı. */
+  line-height: 1cap;
+  color: #ddeeff;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+/* --- Sağ: TECH üstte + tagline altta --- */
+/* align-items:stretch ile right-col yüksekliği = KAR cap-height kutusuyla aynı */
+.right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 12px;
+}
+
+.tech {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  font-size: 62px;
+  line-height: 1cap;
+  color: #00d4ff;
+  letter-spacing: 8px;
+  text-shadow: 0 0 18px rgba(0,212,255,0.5);
+}
+
+.tagline {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1cap;
+  letter-spacing: 3.5px;
+  color: #5a7aaa;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.amp { color: #0077ff; }
+
+/* ===== LIGHT VARIANTS ===== */
+.kar-light  { color: #0a1540; }
+
+.tech-light {
+  color: #0044cc;
+  text-shadow: none;
+}
+
+.tagline-light { color: #4a5c8a; }
+.amp-light     { color: #0044cc; }

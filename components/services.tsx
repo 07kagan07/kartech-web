@@ -79,7 +79,7 @@ export function Services() {
                 {service.solution}
               </p>
               <Button variant="ghost" size="sm" asChild className="gap-2 px-0 text-primary hover:text-primary">
-                <a href="#iletisim">
+                <a href="tel:+905377322726">
                   Bilgi Al
                   <ArrowRight className="h-3.5 w-3.5" />
                 </a>

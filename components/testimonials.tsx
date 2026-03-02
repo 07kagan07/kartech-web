@@ -32,7 +32,7 @@ export function Testimonials() {
           </p>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             <span className="text-balance">
-              Bize Güvenen <span className="text-primary">500+</span> İşletme ve Aile
+              Müşterilerimizin Deneyimleri
             </span>
           </h2>
         </div>

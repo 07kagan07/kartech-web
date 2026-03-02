@@ -15,7 +15,7 @@ const footerLinks = {
     { label: "Ücretsiz Keşif", href: "#iletisim" },
   ],
   sosyalMedya: [
-    { label: "Instagram", href: "#" },
+    { label: "Instagram", href: "https://www.instagram.com/kartechteknoloji" },
     { label: "Facebook", href: "#" },
     { label: "YouTube", href: "#" },
     { label: "LinkedIn", href: "#" },
@@ -36,11 +36,11 @@ export function Footer() {
               Profesyonel güvenlik sistemleri ve kamera kurulumu. Eviniz ve iş
               yeriniz için anahtar teslim çözümler.
             </p>
-            <div className="mt-2 text-sm text-white/70">
-              <p>Atatürk Mah. Güvenlik Cad. No:42</p>
-              <p>Kadıköy, İstanbul</p>
-              <p className="mt-2">+90 (212) 555 42 42</p>
-              <p>info@kartech.com.tr</p>
+            <div className="mt-2 flex flex-col gap-1 text-sm text-white/70">
+              <p className="font-semibold tracking-widest text-white">ANTALYA</p>
+              <a href="tel:+905377322726" className="hover:text-white">+90 537 732 27 26</a>
+              <a href="https://wa.me/905377322726" target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a>
+              <a href="mailto:kartechteknoloji@gmail.com" className="hover:text-white">kartechteknoloji@gmail.com</a>
             </div>
           </div>
 
@@ -92,6 +92,8 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {link.label}

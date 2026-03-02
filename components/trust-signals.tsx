@@ -1,9 +1,9 @@
 import { Headphones, Award, BadgeCheck, Clock, TrendingUp, ShieldCheck } from "lucide-react"
 
 const stats = [
-  { number: "500+", label: "Tamamlanan Proje" },
   { number: "10+", label: "Yıllık Deneyim" },
-  { number: "%99.8", label: "Müşteri Memnuniyeti" },
+  { number: "7/24", label: "Teknik Destek" },
+  { number: "2 Yıl", label: "Garanti" },
   { number: "24 Saat", label: "Acil Müdahale" },
 ]
 

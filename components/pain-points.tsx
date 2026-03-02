@@ -76,7 +76,7 @@ export function PainPoints() {
             </p>
 
             <Button size="lg" asChild className="w-fit gap-2 shadow-md shadow-primary/20">
-              <a href="#iletisim">
+              <a href="tel:+905377322726">
                 Ücretsiz Çözüm Önerisi Al
                 <ArrowRight className="h-4 w-4" />
               </a>

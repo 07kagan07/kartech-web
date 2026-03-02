@@ -24,9 +24,9 @@ export function CtaBanner() {
             asChild
             className="gap-2 bg-[#0044cc] text-base text-white shadow-lg shadow-[#0044cc]/30 hover:bg-[#0033aa]"
           >
-            <a href="#iletisim">
-              Ücretsiz Keşif Talep Et
-              <ArrowRight className="h-4 w-4" />
+            <a href="tel:+905377322726">
+              <PhoneCall className="h-4 w-4" />
+              Hemen Ara
             </a>
           </Button>
           <Button
@@ -35,9 +35,9 @@ export function CtaBanner() {
             asChild
             className="gap-2 border-white/30 bg-transparent text-base text-white hover:bg-white/10 hover:text-white"
           >
-            <a href="tel:+902125554242">
-              <PhoneCall className="h-4 w-4" />
-              +90 (212) 555 42 42
+            <a href="https://wa.me/905377322726" target="_blank" rel="noopener noreferrer">
+              <ArrowRight className="h-4 w-4" />
+              WhatsApp&apos;tan Yaz
             </a>
           </Button>
         </div>
