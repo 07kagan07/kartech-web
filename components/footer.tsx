@@ -16,9 +16,6 @@ const footerLinks = {
   ],
   sosyalMedya: [
     { label: "Instagram", href: "https://www.instagram.com/kartechteknoloji" },
-    { label: "Facebook", href: "#" },
-    { label: "YouTube", href: "#" },
-    { label: "LinkedIn", href: "#" },
   ],
 }
 

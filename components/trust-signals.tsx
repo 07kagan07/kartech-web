@@ -15,7 +15,7 @@ const reasons = [
   },
   {
     icon: Award,
-    title: "Uzman Mühendis Kadrosu",
+    title: "Uzman Teknik Kadrosu",
     description:
       "Sertifikalı mühendis ve teknisyenlerden oluşan ekibimiz projenizi başından sonuna yönetiyor.",
   },
