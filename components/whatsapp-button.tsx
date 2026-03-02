@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react"
 export function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/905377322726"
+      href={`https://wa.me/905377322726?text=${encodeURIComponent("Merhaba, ücretsiz keşif talebinde bulunmak istiyorum. Bilgi alabilir miyim?")}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp ile iletişime geçin"

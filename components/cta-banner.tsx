@@ -35,7 +35,7 @@ export function CtaBanner() {
             asChild
             className="gap-2 border-white/30 bg-transparent text-base text-white hover:bg-white/10 hover:text-white"
           >
-            <a href="https://wa.me/905377322726" target="_blank" rel="noopener noreferrer">
+            <a href={`https://wa.me/905377322726?text=${encodeURIComponent("Merhaba, ücretsiz keşif talebinde bulunmak istiyorum. Bilgi alabilir miyim?")}`} target="_blank" rel="noopener noreferrer">
               <ArrowRight className="h-4 w-4" />
               WhatsApp&apos;tan Yaz
             </a>

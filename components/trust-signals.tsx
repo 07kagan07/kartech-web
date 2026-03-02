@@ -1,7 +1,6 @@
 import { Headphones, Award, BadgeCheck, Clock, TrendingUp, ShieldCheck } from "lucide-react"
 
 const stats = [
-  { number: "10+", label: "Yıllık Deneyim" },
   { number: "7/24", label: "Teknik Destek" },
   { number: "2 Yıl", label: "Garanti" },
   { number: "24 Saat", label: "Acil Müdahale" },
@@ -51,7 +50,7 @@ export function TrustSignals() {
     <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Stats Bar */}
-        <div className="mb-16 grid grid-cols-2 gap-4 rounded-2xl border border-border bg-muted/50 p-6 md:grid-cols-4 lg:p-8">
+        <div className="mb-16 grid grid-cols-1 gap-4 rounded-2xl border border-border bg-muted/50 p-6 sm:grid-cols-3 lg:p-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-heading text-3xl font-bold text-primary lg:text-4xl">

@@ -3,7 +3,8 @@ import { PhoneCall, MessageCircle, Clock, Mail } from "lucide-react"
 
 const PHONE = "+905377322726"
 const PHONE_DISPLAY = "+90 537 732 27 26"
-const WHATSAPP = "https://wa.me/905377322726"
+const WA_MESSAGE = encodeURIComponent("Merhaba, ücretsiz keşif talebinde bulunmak istiyorum. Bilgi alabilir miyim?")
+const WHATSAPP = `https://wa.me/905377322726?text=${WA_MESSAGE}`
 const EMAIL = "kartechteknoloji@gmail.com"
 
 export function ContactForm() {

@@ -39,7 +39,7 @@ export function Footer() {
             <div className="mt-2 flex flex-col gap-1 text-sm text-white/70">
               <p className="font-semibold tracking-widest text-white">ANTALYA</p>
               <a href="tel:+905377322726" className="hover:text-white">+90 537 732 27 26</a>
-              <a href="https://wa.me/905377322726" target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a>
+              <a href={`https://wa.me/905377322726?text=${encodeURIComponent("Merhaba, ücretsiz keşif talebinde bulunmak istiyorum. Bilgi alabilir miyim?")}`} target="_blank" rel="noopener noreferrer" className="hover:text-white">WhatsApp</a>
               <a href="mailto:kartechteknoloji@gmail.com" className="hover:text-white">kartechteknoloji@gmail.com</a>
             </div>
           </div>
