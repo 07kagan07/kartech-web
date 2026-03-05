@@ -1,3 +1,5 @@
+import { ORBITRON_BASE64, RAJDHANI_BASE64 } from "./fonts"
+
 interface KartechLogoProps {
   variant?: "light" | "dark"
   size?: "sm" | "md" | "lg"
@@ -17,7 +19,7 @@ export function KartechLogo({
     lg: { scale: 0.85 },
   }
 
-  const baseWidth = 730
+  const baseWidth = 800
   const baseHeight = 190
   const scale = sizeMap[size].scale
   const width = baseWidth * scale
@@ -31,7 +33,7 @@ export function KartechLogo({
 
   return (
     <svg
-      viewBox="0 0 730 190"
+      viewBox="0 0 800 190"
       width={width}
       height={height}
       className={className}
@@ -42,7 +44,7 @@ export function KartechLogo({
         {/* Sağ blok için görünür alan:
             x değeri KAR yazısının sonundan biraz sonra başlıyor. */}
         <clipPath id="kartech-right-clip">
-          <rect x="230" y="40" width="520" height="120" />
+          <rect x="230" y="40" width="600" height="120" />
         </clipPath>
         {techGlow && (
           <filter id="tech-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -56,6 +58,18 @@ export function KartechLogo({
         )}
         <style>
           {`
+            @font-face {
+              font-family: 'Orbitron';
+              src: url('${ORBITRON_BASE64}') format('woff2');
+              font-weight: 900;
+              font-style: normal;
+            }
+            @font-face {
+              font-family: 'Rajdhani';
+              src: url('${RAJDHANI_BASE64}') format('woff2');
+              font-weight: 700;
+              font-style: normal;
+            }
             .kar-text {
               font-family: 'Orbitron', system-ui, sans-serif;
               font-weight: 900;
