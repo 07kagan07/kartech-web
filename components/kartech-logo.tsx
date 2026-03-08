@@ -44,7 +44,7 @@ export function KartechLogo({
         {/* Sağ blok için görünür alan:
             x değeri KAR yazısının sonundan biraz sonra başlıyor. */}
         <clipPath id="kartech-right-clip">
-          <rect x="230" y="40" width="600" height="120" />
+          <rect x="340" y="10" width="460" height="150" />
         </clipPath>
         {techGlow && (
           <filter id="tech-glow" x="-50%" y="-50%" width="200%" height="200%">
@@ -53,7 +53,12 @@ export function KartechLogo({
               in="blur"
               type="matrix"
               values="0 0 0 0 0   0 0 0 0 0.83   0 0 0 0 1   0 0 0 0.8 0"
+              result="glow"
             />
+            <feMerge>
+              <feMergeNode in="glow" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
           </filter>
         )}
         <style>
@@ -78,41 +83,43 @@ export function KartechLogo({
             .tech-text {
               font-family: 'Orbitron', system-ui, sans-serif;
               font-weight: 900;
-              letter-spacing: 10px;
             }
             .tagline-text {
               font-family: 'Rajdhani', system-ui, sans-serif;
               font-weight: 700;
-              letter-spacing: 6px;
             }
           `}
         </style>
       </defs>
 
       {/* KAR - sol blok, referans yüksekliği */}
-      <text x="0" y="135" fontSize="100" className="kar-text" fill={karColor}>
+      <text x="0" y="135" fontSize="140" className="kar-text" fill={karColor}>
         KAR
       </text>
 
       {/* Sağ blok: TECH + tagline */}
       <g clipPath="url(#kartech-right-clip)">
         <text
-          x="260"
-          y="100"
-          fontSize="50"
+          x="370"
+          y="95"
+          fontSize="85"
           className="tech-text"
           fill={techColor}
           filter={techGlow ? "url(#tech-glow)" : undefined}
+          textLength="380"
+          lengthAdjust="spacing"
         >
           TECH
         </text>
 
         <text
-          x="265"
+          x="370"
           y="135"
-          fontSize="30"
+          fontSize="25"
           className="tagline-text"
           fill={taglineColor}
+          textLength="380"
+          lengthAdjust="spacing"
         >
           TEKNOLOJİ{" "}
           <tspan fill={ampColor}>&amp;</tspan>
