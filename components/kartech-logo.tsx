@@ -83,10 +83,12 @@ export function KartechLogo({
             .tech-text {
               font-family: 'Orbitron', system-ui, sans-serif;
               font-weight: 900;
+              letter-spacing: 18px;
             }
             .tagline-text {
               font-family: 'Rajdhani', system-ui, sans-serif;
               font-weight: 700;
+              letter-spacing: 4.5px;
             }
           `}
         </style>
@@ -100,26 +102,22 @@ export function KartechLogo({
       {/* Sağ blok: TECH + tagline */}
       <g clipPath="url(#kartech-right-clip)">
         <text
-          x="370"
+          x="372"
           y="95"
           fontSize="85"
           className="tech-text"
           fill={techColor}
           filter={techGlow ? "url(#tech-glow)" : undefined}
-          textLength="380"
-          lengthAdjust="spacing"
         >
           TECH
         </text>
 
         <text
-          x="370"
+          x="372"
           y="135"
           fontSize="25"
           className="tagline-text"
           fill={taglineColor}
-          textLength="380"
-          lengthAdjust="spacing"
         >
           TEKNOLOJİ{" "}
           <tspan fill={ampColor}>&amp;</tspan>
