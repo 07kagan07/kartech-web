@@ -13,6 +13,6 @@
   <text x="0" y="135" font-size="100" class="kar-text" fill="#0a1540">KAR</text>
   <g clip-path="url(#kartech-right-clip)">
     <text x="260" y="102" font-size="50" class="tech-text" fill="#0044cc">TECH</text>
-    <text x="265" y="135" font-size="30" class="tagline-text" fill="#4a5c8a">TEKNOLOJ? <tspan fill="#0044cc">&amp;</tspan> GÜVENL?K</text>
+    <text x="265" y="135" font-size="30" class="tagline-text" fill="#4a5c8a">TEKNOLOJ? <tspan fill="#0044cc">&amp;</tspan> Gï¿½VENL?K</text>
   </g>
 </svg>
