@@ -1,8 +1,27 @@
+"use client"
+
 import Image from "next/image"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { PhoneCall, ArrowRight } from "lucide-react"
+import { PhoneCall, ArrowRight, Loader2 } from "lucide-react"
+import type { Product } from "@/lib/sheets"
 
 export function Products() {
+  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch("/api/products")
+      .then((res) => {
+        if (!res.ok) throw new Error("Ürünler yüklenemedi")
+        return res.json()
+      })
+      .then((data) => setProducts(data))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false))
+  }, [])
+
   return (
     <section id="urunler" className="bg-muted py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -34,60 +53,84 @@ export function Products() {
           </div>
         </div>
 
-        {/* Content: Image + Features */}
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
-          {/* Product Image */}
-          <div className="flex-1">
-            <div className="overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-sm sm:p-10">
-              <Image
-                src="/images/kamerahikvision.png"
-                alt="Hikvision Güvenlik Kameraları"
-                width={800}
-                height={600}
-                className="h-auto w-full object-contain"
-              />
-            </div>
+        {/* Dinamik Ürün Listesi */}
+        {loading && (
+          <div className="flex justify-center py-16">
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
           </div>
+        )}
 
-          {/* Features */}
-          <div className="flex flex-1 flex-col gap-6">
-            <h3 className="font-heading text-2xl font-bold text-foreground">
-              Profesyonel Güvenlik Ekipmanları
-            </h3>
-            <div className="flex flex-col gap-4">
-              {[
-                { title: "IP & AHD Kameralar", desc: "2MP, 4MP ve 8MP seçenekleriyle iç ve dış mekân kameraları" },
-                { title: "NVR Kayıt Cihazları", desc: "4, 8, 16 ve 32 kanal ağ tabanlı kayıt cihazları" },
-                { title: "Hareket Sensörleri", desc: "PIR ve mikrodalga teknolojisiyle hassas hareket algılama" },
-                { title: "Görüntülü Diyafon", desc: "HD görüntülü, uzaktan erişimli diyafon sistemleri" },
-              ].map((item) => (
-                <div key={item.title} className="rounded-xl border border-border bg-background p-4 shadow-sm">
-                  <p className="font-heading text-sm font-semibold text-foreground">{item.title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
+        {error && (
+          <p className="text-center text-sm text-destructive">{error}</p>
+        )}
+
+        {!loading && !error && products.length === 0 && (
+          <p className="text-center text-sm text-muted-foreground">Henüz ürün eklenmemiş.</p>
+        )}
+
+        {!loading && !error && products.length > 0 && (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="flex flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm"
+              >
+                {product.image_url && product.image_url.startsWith("http") && (
+                  <div className="relative h-48 w-full bg-muted">
+                    <Image
+                      src={product.image_url}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-4"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col gap-2 p-5">
+                  {product.category && (
+                    <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+                      {product.category}
+                    </span>
+                  )}
+                  <h3 className="font-heading text-base font-bold text-foreground">
+                    {product.name}
+                  </h3>
+                  <p className="flex-1 text-sm text-muted-foreground">
+                    {product.description}
+                  </p>
+                  <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                    <Button size="sm" asChild className="gap-2">
+                      <a href="tel:+905377322726">
+                        <PhoneCall className="h-3.5 w-3.5" />
+                        Fiyat Al
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" asChild className="gap-2">
+                      <a
+                        href={`https://wa.me/905377322726?text=${encodeURIComponent(`Merhaba, ${product.name} hakkında bilgi almak istiyorum.`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ArrowRight className="h-3.5 w-3.5" />
+                        WhatsApp
+                      </a>
+                    </Button>
+                  </div>
                 </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col gap-3 pt-2 sm:flex-row">
-              <Button size="lg" asChild className="gap-2">
-                <a href="tel:+905377322726">
-                  <PhoneCall className="h-4 w-4" />
-                  Fiyat Bilgisi Al
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild className="gap-2">
-                <a
-                  href={`https://wa.me/905377322726?text=${encodeURIComponent("Merhaba, Hikvision ürünleri hakkında bilgi almak istiyorum.")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                  WhatsApp&apos;tan Sor
-                </a>
-              </Button>
-            </div>
+              </div>
+            ))}
           </div>
-        </div>
+        )}
+
+        {!loading && !error && products.length > 0 && (
+          <div className="mt-10 flex justify-center">
+            <Button asChild size="lg" variant="outline" className="gap-2">
+              <a href="/urunler">
+                Tüm Ürünleri Gör
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   )

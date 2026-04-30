@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { KartechLogo } from "@/components/kartech-logo"
@@ -8,7 +9,7 @@ import { KartechLogo } from "@/components/kartech-logo"
 const navLinks = [
   { label: "Hizmetler", href: "#hizmetler" },
   { label: "Çözümler", href: "#cozumler" },
-  { label: "Ürünler", href: "#urunler" },
+  { label: "Ürünler", href: "/urunler" },
   { label: "İletişim", href: "#iletisim" },
 ]
 
@@ -18,19 +19,19 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-md shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
-        <a href="#">
+        <Link href="/">
           <KartechLogo variant="light" size="sm" />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -57,14 +58,14 @@ export function Header() {
         <div className="border-t border-border bg-background md:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button asChild className="mt-2">
               <a href="tel:+905377322726" onClick={() => setMobileOpen(false)}>
