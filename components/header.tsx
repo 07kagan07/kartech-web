@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button"
 import { KartechLogo } from "@/components/kartech-logo"
 
 const navLinks = [
-  { label: "Hizmetler", href: "#hizmetler" },
-  { label: "Çözümler", href: "#cozumler" },
+  { label: "Hizmetler", href: "/#hizmetler" },
+  { label: "Çözümler", href: "/#cozumler" },
   { label: "Ürünler", href: "/urunler" },
-  { label: "İletişim", href: "#iletisim" },
+  { label: "İletişim", href: "/#iletisim" },
 ]
 
 export function Header() {
