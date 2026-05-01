@@ -75,16 +75,20 @@ export function Products() {
                 key={product.id}
                 className="flex flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm"
               >
-                {product.image_url && product.image_url.startsWith("http") && (
-                  <div className="relative h-48 w-full bg-muted">
+                <div className="relative h-48 w-full bg-muted">
+                  {product.image_url && product.image_url.startsWith("http") ? (
                     <Image
                       src={product.image_url}
                       alt={product.name}
                       fill
                       className="object-contain p-4"
                     />
-                  </div>
-                )}
+                  ) : (
+                    <div className="flex h-full items-center justify-center">
+                      <span className="text-3xl text-muted-foreground/30">📦</span>
+                    </div>
+                  )}
+                </div>
                 <div className="flex flex-1 flex-col gap-2 p-5">
                   {product.category && (
                     <span className="text-xs font-semibold uppercase tracking-widest text-primary">

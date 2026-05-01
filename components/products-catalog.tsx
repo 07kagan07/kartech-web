@@ -167,11 +167,11 @@ export function ProductsCatalog() {
                     {product.name}
                   </h3>
                   {product.description && product.description !== "-" && (
-                    <p className="flex-1 text-sm text-muted-foreground line-clamp-2">
+                    <p className="text-sm text-muted-foreground line-clamp-2">
                       {product.description}
                     </p>
                   )}
-                  <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+                  <div className="mt-auto pt-3 flex flex-col gap-2 sm:flex-row">
                     <Button size="sm" asChild className="gap-1.5">
                       <a href="tel:+905377322726">
                         <PhoneCall className="h-3.5 w-3.5" />
