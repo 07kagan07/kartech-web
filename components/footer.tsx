@@ -2,17 +2,18 @@ import { KartechLogo } from "@/components/kartech-logo"
 
 const footerLinks = {
   hizmetler: [
-    { label: "IP Kamera Kurulumu", href: "#hizmetler" },
-    { label: "AHD Kamera Kurulumu", href: "#hizmetler" },
-    { label: "Alarm Sistemleri", href: "#hizmetler" },
-    { label: "Diyafon Sistemleri", href: "#hizmetler" },
-    { label: "Bakım & Destek", href: "#hizmetler" },
+    { label: "IP Kamera Kurulumu", href: "/#hizmetler" },
+    { label: "AHD Kamera Kurulumu", href: "/#hizmetler" },
+    { label: "Alarm Sistemleri", href: "/#hizmetler" },
+    { label: "Diyafon Sistemleri", href: "/#hizmetler" },
+    { label: "Bakım & Destek", href: "/#hizmetler" },
   ],
   cozumler: [
-    { label: "Yeni İnşaat Projeleri", href: "#cozumler" },
-    { label: "Mevcut Bina Kurulumu", href: "#cozumler" },
-    { label: "Bireysel Ürün Satışı", href: "#urunler" },
-    { label: "Ücretsiz Keşif", href: "#iletisim" },
+    { label: "Yeni İnşaat Projeleri", href: "/#cozumler" },
+    { label: "Mevcut Bina Kurulumu", href: "/#cozumler" },
+    { label: "Bireysel Ürün Satışı", href: "/urunler" },
+    { label: "Ücretsiz Keşif", href: "/#iletisim" },
+    { label: "Sıkça Sorulan Sorular", href: "/#sss" },
   ],
   sosyalMedya: [
     { label: "Instagram", href: "https://www.instagram.com/kartechteknoloji" },
@@ -26,7 +27,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <a href="#">
+            <a href="/" aria-label="KARTECH ana sayfa">
               <KartechLogo variant="dark" size="sm" />
             </a>
             <p className="text-sm leading-relaxed text-white/70">

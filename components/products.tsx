@@ -6,12 +6,13 @@ import { Button } from "@/components/ui/button"
 import { PhoneCall, ArrowRight, Loader2 } from "lucide-react"
 import type { Product } from "@/lib/sheets"
 
-export function Products() {
-  const [products, setProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
+export function Products({ initialProducts }: { initialProducts?: Product[] }) {
+  const [products, setProducts] = useState<Product[]>(initialProducts ?? [])
+  const [loading, setLoading] = useState(!initialProducts)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    if (initialProducts) return
     fetch("/api/products")
       .then((res) => {
         if (!res.ok) throw new Error("Ürünler yüklenemedi")
@@ -20,7 +21,7 @@ export function Products() {
       .then((data) => setProducts(data))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false))
-  }, [])
+  }, [initialProducts])
 
   return (
     <section id="urunler" className="bg-muted py-20 lg:py-28">

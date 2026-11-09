@@ -6,14 +6,15 @@ import { Button } from "@/components/ui/button"
 import { PhoneCall, ArrowRight, Search, Loader2, X } from "lucide-react"
 import type { Product } from "@/lib/sheets"
 
-export function ProductsCatalog() {
-  const [products, setProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
+export function ProductsCatalog({ initialProducts }: { initialProducts?: Product[] }) {
+  const [products, setProducts] = useState<Product[]>(initialProducts ?? [])
+  const [loading, setLoading] = useState(!initialProducts)
   const [error, setError] = useState<string | null>(null)
   const [search, setSearch] = useState("")
   const [activeCategory, setActiveCategory] = useState<string>("Tümü")
 
   useEffect(() => {
+    if (initialProducts) return
     fetch("/api/products")
       .then((res) => {
         if (!res.ok) throw new Error("Ürünler yüklenemedi")
@@ -22,7 +23,7 @@ export function ProductsCatalog() {
       .then(setProducts)
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false))
-  }, [])
+  }, [initialProducts])
 
   const categories = useMemo(() => {
     const cats = Array.from(new Set(products.map((p) => p.category).filter(Boolean)))

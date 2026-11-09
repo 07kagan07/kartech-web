@@ -23,6 +23,9 @@ export function Hero() {
             </div>
 
             <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-[3.5rem]">
+              <span className="mb-3 block text-base font-semibold uppercase tracking-widest text-primary md:text-lg">
+                Antalya Güvenlik Kamerası ve Alarm Sistemleri
+              </span>
               <span className="text-balance">
                 {"Eviniz ve İş Yeriniz "}
                 <span className="text-primary">Gerçekten Güvende mi?</span>
@@ -30,7 +33,8 @@ export function Hero() {
             </h1>
 
             <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
-              Birçoğu hırsızlık yaşandıktan <strong className="text-foreground">sonra</strong> bize
+              Antalya&apos;da ev ve iş yerlerine IP ve AHD güvenlik kamerası, alarm ve
+              görüntülü diyafon kuruyoruz. Birçoğu hırsızlık yaşandıktan <strong className="text-foreground">sonra</strong> bize
               ulaşıyor. Siz o birçoğundan olmayın.{" "}
               <strong className="text-foreground">Ücretsiz keşif</strong> ile
               güvenlik açıklarınızı tespit edelim, size özel çözüm sunalım.
