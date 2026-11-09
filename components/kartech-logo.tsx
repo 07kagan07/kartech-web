@@ -1,4 +1,4 @@
-import { ORBITRON_BASE64, RAJDHANI_BASE64 } from "./fonts"
+import { LOGO } from "./logo-paths"
 
 interface KartechLogoProps {
   variant?: "light" | "dark"
@@ -6,6 +6,14 @@ interface KartechLogoProps {
   className?: string
 }
 
+/**
+ * KARTECH logosu. Yazılar font'a bağlı değil, glyph path'leri olarak çiziliyor
+ * (bkz. logo-paths.ts) — bu sayede hizalama her tarayıcıda ve export'larda
+ * birebir aynı:
+ *  - KAR üst kenarı = TECH üst kenarı
+ *  - KAR alt kenarı = "TEKNOLOJİ & GÜVENLİK" taban çizgisi
+ *  - TECH ve alt yazı solda (T–T) ve sağda (H–K) aynı noktada
+ */
 export function KartechLogo({
   variant = "light",
   size = "md",
@@ -13,13 +21,7 @@ export function KartechLogo({
 }: KartechLogoProps) {
   const isLight = variant === "light"
 
-  const sizeMap = {
-    sm: { maxWidth: 360 },
-    md: { maxWidth: 520 },
-    lg: { maxWidth: 680 },
-  }
-
-  const maxWidth = sizeMap[size].maxWidth
+  const maxWidth = { sm: 360, md: 520, lg: 680 }[size]
 
   const karColor = isLight ? "#0a1540" : "#ddeeff"
   const techColor = isLight ? "#0044cc" : "#00d4ff"
@@ -29,22 +31,18 @@ export function KartechLogo({
 
   return (
     <svg
-      viewBox="0 0 832 162"
+      viewBox={LOGO.viewBox}
       width="100%"
       style={{ maxWidth, display: "block" }}
       className={className}
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="KARTECH Logo"
+      role="img"
+      aria-label="KARTECH Teknoloji & Güvenlik"
     >
-      <defs>
-        {/* Sağ blok için görünür alan:
-            x değeri KAR yazısının sonundan biraz sonra başlıyor. */}
-        <clipPath id="kartech-right-clip">
-          <rect x="372" y="10" width="450" height="152" />
-        </clipPath>
-        {techGlow && (
-          <filter id="tech-glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      {techGlow && (
+        <defs>
+          <filter id="kartech-tech-glow" x="-10%" y="-30%" width="120%" height="160%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
             <feColorMatrix
               in="blur"
               type="matrix"
@@ -56,54 +54,17 @@ export function KartechLogo({
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-        )}
-        <style>
-          {`
-            @font-face {
-              font-family: 'Orbitron';
-              src: url('${ORBITRON_BASE64}') format('woff2');
-              font-weight: 900;
-              font-style: normal;
-            }
-            @font-face {
-              font-family: 'Rajdhani';
-              src: url('${RAJDHANI_BASE64}') format('woff2');
-              font-weight: 700;
-              font-style: normal;
-            }
-            .kar-text {
-              font-family: 'Orbitron', system-ui, sans-serif;
-              font-weight: 900;
-              letter-spacing: 4px;
-            }
-            .tech-text {
-              font-family: 'Orbitron', system-ui, sans-serif;
-              font-weight: 900;
-              letter-spacing: 0px;
-            }
-            .tagline-text {
-              font-family: 'Rajdhani', system-ui, sans-serif;
-              font-weight: 700;
-              letter-spacing: 0px;
-            }
-          `}
-        </style>
-      </defs>
+        </defs>
+      )}
 
-      {/* KAR - sol blok, referans yüksekliği */}
-      <text x="32" y="135" fontSize="140" className="kar-text" fill={karColor}>
-        KAR
-      </text>
-
-      {/* Sağ blok: TECH + tagline.
-          Her ikisi de x=372'den başlar, textLength=390 ile tam 390px genişliğe
-          kilitlenir. Sol ve sağ kenar her zaman birebir aynı — font metrigi
-          ve rendering bağımsız. */}
-      <g clipPath="url(#kartech-right-clip)">
-        <text x="404" y="95" fontSize="85" textLength="396" lengthAdjust="spacing" className="tech-text" fill={techColor} filter={techGlow ? "url(#tech-glow)" : undefined}>TECH</text>
-
-        <text x="404" y="133" fontSize="25" textLength="390" lengthAdjust="spacing" className="tagline-text" fill={taglineColor}><tspan>{"TEKNOLOJİ "}</tspan><tspan fill={ampColor}>{"&"}</tspan><tspan fill={taglineColor}>{" GÜVENLİK"}</tspan></text>
-      </g>
+      <path d={LOGO.kar} fill={karColor} />
+      <path
+        d={LOGO.tech}
+        fill={techColor}
+        filter={techGlow ? "url(#kartech-tech-glow)" : undefined}
+      />
+      <path d={LOGO.tagline} fill={taglineColor} />
+      <path d={LOGO.amp} fill={ampColor} />
     </svg>
   )
 }
