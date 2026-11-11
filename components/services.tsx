@@ -1,4 +1,4 @@
-import { Camera, ShieldAlert, Phone, Wrench, ArrowRight } from "lucide-react"
+import { Camera, ShieldAlert, Code, Wrench, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const services = [
@@ -19,12 +19,25 @@ const services = [
     highlight: "Anında uyarı",
   },
   {
-    icon: Phone,
-    title: "Görüntülü Diyafon",
-    problem: "Apartman girişinde kim olduğunu göremeden mi açıyorsunuz?",
-    solution:
-      "HD görüntülü diyafon sistemi ile kapıyı açmadan ziyaretçinizi görün ve konuşun. Uzaktan kapı açma özelliği.",
-    highlight: "Akıllı bina",
+    icon: Code,
+    title: "Yazılım Çözümleri",
+    problem: "İşletmeniz dijitalde hak ettiği yerde mi?",
+    solution: (
+      <>
+        Web sitesinden mobil uygulamaya, özel yazılımdan otomasyona kadar yazılımla ilgili her
+        işinizi yapıyoruz. Projelerimizden bazıları:{" "}
+        <a
+          href="https://restoflowpos.com/tanitim"
+          target="_blank"
+          rel="noopener"
+          className="font-semibold text-orange-600 underline underline-offset-2 hover:text-orange-700"
+        >
+          RestoFlow POS
+        </a>{" "}
+        adisyon programı ve plaka tanıma sistemi.
+      </>
+    ),
+    highlight: "Uçtan uca",
   },
   {
     icon: Wrench,
@@ -46,7 +59,7 @@ export function Services() {
           </p>
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             <span className="text-balance">
-              Hangi Güvenlik Sorununu Yaşıyor<span className="text-primary">sunuz?</span>
+              Hangi Sorununuzu <span className="text-primary">Çözelim?</span>
             </span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">

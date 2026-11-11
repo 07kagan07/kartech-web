@@ -6,6 +6,7 @@ const footerLinks = {
     { label: "AHD Kamera Kurulumu", href: "/#hizmetler" },
     { label: "Alarm Sistemleri", href: "/#hizmetler" },
     { label: "Diyafon Sistemleri", href: "/#hizmetler" },
+    { label: "Yazılım Çözümleri", href: "/#hizmetler" },
     { label: "Bakım & Destek", href: "/#hizmetler" },
   ],
   cozumler: [

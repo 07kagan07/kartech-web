@@ -33,7 +33,7 @@ export function SiteJsonLd() {
           areaServed: SITE.country,
           availableLanguage: ["Turkish"],
         },
-        knowsAbout: ["IP kamera", "AHD kamera", "Alarm sistemleri", "Görüntülü diyafon", "Hikvision", "NVR", "DVR"],
+        knowsAbout: ["IP kamera", "AHD kamera", "Alarm sistemleri", "Görüntülü diyafon", "Hikvision", "NVR", "DVR", "Adisyon programı", "Plaka tanıma sistemi", "Web sitesi geliştirme", "Mobil uygulama geliştirme"],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Güvenlik Sistemleri Hizmetleri",

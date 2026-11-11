@@ -40,6 +40,14 @@ export const SITE = {
     "ev güvenlik sistemi",
     "iş yeri güvenlik kamerası",
     "bina güvenlik sistemi",
+    "RestoFlow",
+    "adisyon programı",
+    "restoran adisyon yazılımı",
+    "Antalya yazılım firması",
+    "Antalya web sitesi yapımı",
+    "mobil uygulama geliştirme",
+    "özel yazılım geliştirme",
+    "plaka tanıma sistemi Antalya",
   ],
 }
 
@@ -58,6 +66,20 @@ export const SERVICES = [
     name: "Görüntülü Diyafon Sistemleri",
     description:
       "HD görüntülü diyafon ile kapıyı açmadan ziyaretçiyi görme, konuşma ve uzaktan kapı açma.",
+  },
+  {
+    name: "RestoFlow Adisyon Programı",
+    description:
+      "Restoran ve kafeler için adisyon ve sipariş yönetim yazılımı: masa, sipariş ve kasa takibi tek ekranda.",
+  },
+  {
+    name: "Plaka Tanıma Sistemi",
+    description: "Kamera altyapısıyla çalışan, araç plakalarını otomatik okuyan plaka tanıma yazılımı.",
+  },
+  {
+    name: "Yazılım Geliştirme (Web Sitesi, Mobil Uygulama, Özel Yazılım)",
+    description:
+      "Web sitesinden mobil uygulamaya, özel yazılımdan otomasyona kadar işletmelere uçtan uca yazılım geliştirme.",
   },
   {
     name: "Bakım ve Teknik Destek",
@@ -102,6 +124,10 @@ export const FAQS = [
   {
     q: "Hangi marka ürünleri kullanıyorsunuz?",
     a: "Güvenlik sektörünün dünya lideri Hikvision'ın iş ortağıyız. Uluslararası standartlara uygun, garantili ve sertifikalı donanım kullanıyoruz.",
+  },
+  {
+    q: "Güvenlik sistemleri dışında yazılım hizmeti veriyor musunuz?",
+    a: "Evet. Web sitesinden mobil uygulamaya, özel yazılımdan otomasyona kadar yazılımla ilgili her işinizi yapıyoruz. Geliştirdiğimiz projelerden bazıları restoran ve kafeler için RestoFlow adisyon programı ve plaka tanıma sistemidir.",
   },
   {
     q: "Kurulumdan sonra destek veriyor musunuz?",

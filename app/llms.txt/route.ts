@@ -25,7 +25,7 @@ export async function GET() {
 
 > ${SITE.description}
 
-${SITE.name}, ${SITE.city} merkezli bir güvenlik sistemleri firmasıdır. Hikvision iş ortağı olarak ev, iş yeri, site, apartman ve yeni inşaat projelerine anahtar teslim güvenlik kamerası, alarm ve görüntülü diyafon kurulumu yapar.
+${SITE.name}, ${SITE.city} merkezli bir güvenlik sistemleri firmasıdır. Hikvision iş ortağı olarak ev, iş yeri, site, apartman ve yeni inşaat projelerine anahtar teslim güvenlik kamerası, alarm ve görüntülü diyafon kurulumu yapar. Ayrıca web sitesi, mobil uygulama, özel yazılım ve otomasyon dahil yazılımla ilgili her türlü işi yapar; projeleri arasında RestoFlow adisyon programı ve plaka tanıma sistemi bulunur.
 
 ## İletişim
 
